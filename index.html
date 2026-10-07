@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>VÉRA | Modern Fashion</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <header class="navbar">
+
+        <div class="logo">
+            VÉRA
+        </div>
+
+        <nav>
+            <a href="#home">Home</a>
+            <a href="#collections">Collections</a>
+            <a href="#products">Shop</a>
+            <a href="#about">About</a>
+        </nav>
+
+        <div class="nav-actions">
+
+            <div class="search-box">
+                <input
+                    type="text"
+                    id="searchInput"
+                    placeholder="Search products..."
+                >
+                🔍
+            </div>
+
+            <button class="cart-btn" onclick="openCart()">
+                🛒
+                <span id="cart-count">0</span>
+            </button>
+
+        </div>
+
+    </header>
+
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+
+        <div class="hero-content">
+
+            <p class="small-title">
+                NEW SEASON 2026
+            </p>
+
+            <h1>
+                WEAR YOUR<br>
+                <span>IDENTITY.</span>
+            </h1>
+
+            <p class="hero-text">
+                Discover modern essentials designed for
+                everyday confidence and effortless style.
+            </p>
+
+            <button class="primary-btn" onclick="scrollToProducts()">
+                SHOP COLLECTION →
+            </button>
+
+        </div>
+
+        <div class="hero-image">
+
+            <img
+                src="https://images.unsplash.com/photo-1529139574466-a303027c1d8b?auto=format&fit=crop&w=900&q=80"
+                alt="Fashion model"
+            >
+
+            <div class="image-label">
+                VÉRA<br>
+                <span>NEW COLLECTION</span>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- Categories -->
+    <section class="collections" id="collections">
+
+        <div class="section-heading">
+            <p>EXPLORE</p>
+            <h2>Shop by Category</h2>
+        </div>
+
+
+        <div class="category-grid">
+
+            <div class="category-card">
+
+                <img
+                    src="https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&w=700&q=80"
+                    alt="Women's fashion"
+                >
+
+                <div class="category-overlay">
+                    <h3>WOMEN</h3>
+                    <button onclick="filterProducts('women')">
+                        SHOP NOW →
+                    </button>
+                </div>
+
+            </div>
+
+
+            <div class="category-card">
+
+                <img
+                    src="https://images.unsplash.com/photo-1617137968427-85924c800a22?auto=format&fit=crop&w=700&q=80"
+                    alt="Men's fashion"
+                >
+
+                <div class="category-overlay">
+                    <h3>MEN</h3>
+                    <button onclick="filterProducts('men')">
+                        SHOP NOW →
+                    </button>
+                </div>
+
+            </div>
+
+
+            <div class="category-card">
+
+                <img
+                    src="https://images.unsplash.com/photo-1551488831-00ddcb6c6bd3?auto=format&fit=crop&w=700&q=80"
+                    alt="Streetwear"
+                >
+
+                <div class="category-overlay">
+                    <h3>STREETWEAR</h3>
+                    <button onclick="filterProducts('streetwear')">
+                        SHOP NOW →
+                    </button>
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- Products -->
+    <section class="products-section" id="products">
+
+        <div class="section-heading">
+
+            <p>OUR PICKS</p>
+
+            <h2>Featured Collection</h2>
+
+        </div>
+
+
+        <div class="filter-buttons">
+
+            <button onclick="filterProducts('all')">
+                All
+            </button>
+
+            <button onclick="filterProducts('men')">
+                Men
+            </button>
+
+            <button onclick="filterProducts('women')">
+                Women
+            </button>
+
+            <button onclick="filterProducts('streetwear')">
+                Streetwear
+            </button>
+
+        </div>
+
+
+        <div class="product-grid" id="productGrid">
+
+            <!-- Products will be added with JavaScript -->
+
+        </div>
+
+    </section>
+
+
+    <!-- About -->
+    <section class="about" id="about">
+
+        <div>
+
+            <p class="small-title">
+                OUR STORY
+            </p>
+
+            <h2>
+                Fashion should feel<br>
+                <span>like you.</span>
+            </h2>
+
+        </div>
+
+        <p>
+            VÉRA is a modern fashion concept focused on
+            simple silhouettes, quality essentials and
+            everyday individuality.
+        </p>
+
+    </section>
+
+
+    <!-- Newsletter -->
+    <section class="newsletter">
+
+        <p>STAY IN THE LOOP</p>
+
+        <h2>
+            Get the latest from VÉRA.
+        </h2>
+
+        <div class="newsletter-form">
+
+            <input
+                type="email"
+                placeholder="Enter your email"
+            >
+
+            <button>
+                JOIN →
+            </button>
+
+        </div>
+
+    </section>
+
+
+    <!-- Footer -->
+    <footer>
+
+        <div class="footer-logo">
+            VÉRA
+        </div>
+
+        <p>
+            © 2026 VÉRA Fashion. All rights reserved.
+        </p>
+
+        <div class="footer-links">
+            <a href="#">Instagram</a>
+            <a href="#">Privacy</a>
+            <a href="#">Contact</a>
+        </div>
+
+    </footer>
+
+
+    <!-- Cart Popup -->
+    <div class="cart-modal" id="cartModal">
+
+        <div class="cart-box">
+
+            <button class="close-btn" onclick="closeCart()">
+                ×
+            </button>
+
+            <h2>Your Cart</h2>
+
+            <div id="cartItems">
+                Your cart is empty.
+            </div>
+
+            <div class="cart-total">
+                Total: ₹<span id="cartTotal">0</span>
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <script src="script.js"></script>
+
+</body>
+</html>
